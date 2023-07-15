@@ -32,23 +32,39 @@ export default {
 
 <template>
     <div>
-        <span class="titles">Path: </span>
-        <pre class="pathValue">{{ PATH }}</pre>
-        <span class="titles">XML: </span>
-        <XMLComponent @click="receivePath" :node="xmlDoc.firstChild" :name="rootName" :level="lvl"></XMLComponent>
+        <div id="path">
+            <span class="titles">Path: </span>
+            <pre class="pathValue">{{ PATH }}</pre>
+        </div>
+        <div id="xml">
+            <span class="titles">XML: </span>
+            <XMLComponent class="xml-display" @click="receivePath" :node="xmlDoc.firstChild" :name="rootName" :level="lvl"></XMLComponent>
+        </div>
     </div>
 </template>
 
 <style scoped>
 .titles {
-    color: black;
+    color: whitesmoke;
     font-size: 20px;
 }
 .pathValue{
-    color: black;
+    color: whitesmoke;
     font-size: 18px;
     border-color: darkgrey;
-    background-color: whitesmoke;    
+    border-radius: 2mm;
+    padding: 3px;
+    background-color: rgb(71, 72, 73);
+}
+.xml-display {
+    border-radius: 2mm;
+    padding: 5px;
+    border-color: darkgray;
+    background-color: rgb(71, 72, 73);
+}
+
+div#xml {
+    margin-top: 1%;
 }
 
 </style>

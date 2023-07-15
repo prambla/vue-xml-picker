@@ -112,19 +112,15 @@ export default {
 
 <style scoped>
 .text {
-    color: black;
+    color: whitesmoke;
 }
 
 .elementName {
-    color: blue;
+    color: rgb(81, 255, 0);
 }
 
 .angles {
-    color: gray;
-}
-
-.attributes {
-    color: red;
+    color: rgb(231, 231, 231);
 }
 
 </style>

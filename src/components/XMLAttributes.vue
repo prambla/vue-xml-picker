@@ -36,12 +36,12 @@ export default {
 
 <style scoped>
 .att-name {
-    color: orangered;
+    color: rgb(255, 124, 1);
 }
 .att-value {
-    color: green;
+    color: rgb(123, 147, 255);
 }
 .text {
-    color: gray;
+    color: rgb(231, 231, 231);
 }
 </style>

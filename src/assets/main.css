@@ -2,12 +2,13 @@
 
 #app {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 7px;
+  margin-left: 15px;
+  padding: 5px;
 
   font-weight: normal;
 }
-
+/*
 a,
 .green {
   text-decoration: none;
@@ -20,8 +21,8 @@ a,
     background-color: hsla(160, 100%, 37%, 0.2);
   }
 }
-
-@media (min-width: 1024px) {
+*/
+@media (min-width: 100%) {
   body {
     display: flex;
     place-items: center;
