@@ -4,19 +4,20 @@ import XMLComponent from "./XMLComponent.vue"
 var parser = new DOMParser();
 
 export default {
+    model: {
+        prop: 'path',
+        event: 'change'
+    },
+    props: ['xmlStr', 'path'],
     components: {
         XMLComponent
     },
     data() {
         return {
             xmlDoc: XMLDocument,
-            PATH: 'Prem el component per visualitzar-ne el PATH',
             lvl: 0,
             rootName: ''
         }
-    },
-    props: {
-        xmlStr: String
     },
     created() {
         this.xmlDoc = parser.parseFromString(this.xmlStr, "text/xml");
@@ -24,38 +25,20 @@ export default {
     },
     methods: {
         receivePath(finalPath) {
-            this.PATH = finalPath;
+            this.$emit('change', finalPath);
         }
     }
 }
 </script>
 
 <template>
-    <div>
-        <div id="path">
-            <span class="titles">Path: </span>
-            <pre class="pathValue">{{ PATH }}</pre>
-        </div>
-        <div id="xml">
-            <span class="titles">XML: </span>
-            <XMLComponent class="xml-display" @click="receivePath" :node="xmlDoc.firstChild" :name="rootName" :level="lvl"></XMLComponent>
-        </div>
+    <div id="xml-display">
+        <span class="titles">XML: </span>
+        <XMLComponent class="xml-display" @click="receivePath" :node="xmlDoc.firstChild" :name="rootName" :level="lvl"></XMLComponent>
     </div>
 </template>
 
 <style scoped>
-.titles {
-    color: whitesmoke;
-    font-size: 20px;
-}
-.pathValue{
-    color: whitesmoke;
-    font-size: 18px;
-    border-color: darkgrey;
-    border-radius: 2mm;
-    padding: 3px;
-    background-color: rgb(71, 72, 73);
-}
 .xml-display {
     border-radius: 2mm;
     padding: 5px;
@@ -63,7 +46,7 @@ export default {
     background-color: rgb(71, 72, 73);
 }
 
-div#xml {
+div#xml-display {
     margin-top: 1%;
 }
 
