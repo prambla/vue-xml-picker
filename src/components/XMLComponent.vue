@@ -96,31 +96,26 @@ export default {
 
 <template>
     <div>
-        <pre><span class="angles">{{ spaces }}&lt</span><span @click="clicked('element')" class="elementName">{{ node.nodeName }}</span><XMLAttributes @click="receiveEmit" :attributesStr="attributes" :nAttributes="numOfAttributes"></XMLAttributes><span class="angles">&gt</span></pre>
+        <pre><span class="simbols">{{ spaces }}&lt</span><span @click="clicked('element')" class="elementName">{{ node.nodeName }}</span><XMLAttributes @click="receiveEmit" :attributesStr="attributes" :nAttributes="numOfAttributes"></XMLAttributes><span class="simbols">&gt</span></pre>
         <div v-if="childType=='list'">
             <div v-for="child in childComponents" :key="child.id">
                 <XMLComponent @click="receiveEmit" :node="child.node" :name="child.id" :level="level+1"></XMLComponent>
             </div>
         </div>
-        <pre v-else-if="childType=='text'"><span>{{ spaces }}    </span><span @click="clicked('text')" class="text">{{ node.firstChild.nodeValue }}</span></pre>
+        <pre v-else-if="childType=='text'"><span>{{ spaces }}    </span><span @click="clicked('text')" class="text-value">{{ node.firstChild.nodeValue }}</span></pre>
         <div v-else>
             <XMLComponent @click="receiveEmit" :node="node.firstChild" :name="node.firstChild.nodeName" :level="level+1"></XMLComponent>
         </div>
-        <pre><span class="angles">{{ spaces }}&lt/</span><span class="elementName">{{ node.nodeName }}</span><span class="angles">&gt</span></pre>
+        <pre><span class="simbols">{{ spaces }}&lt/</span><span class="elementName">{{ node.nodeName }}</span><span class="simbols">&gt</span></pre>
     </div>
 </template>
 
 <style scoped>
-.text {
+.text-value {
     color: whitesmoke;
 }
 
 .elementName {
     color: rgb(81, 255, 0);
 }
-
-.angles {
-    color: rgb(231, 231, 231);
-}
-
 </style>

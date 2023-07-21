@@ -31,7 +31,7 @@ export default {
 </script>
 
 <template>
-    <span><span v-for="attribute in attributes" :key="attribute.name"><span @click="clicked(attribute.name)" class="att-name"> {{ attribute.name }}</span><span class="text">=</span><span class="att-value">{{ attribute.value }}</span></span></span>
+    <span><span v-for="attribute in attributes" :key="attribute.name"><span @click="clicked(attribute.name)" class="att-name"> {{ attribute.name }}</span><span class="simbols">=</span><span class="att-value">{{ attribute.value }}</span></span></span>
 </template>
 
 <style scoped>
@@ -41,7 +41,5 @@ export default {
 .att-value {
     color: rgb(123, 147, 255);
 }
-.text {
-    color: rgb(231, 231, 231);
-}
+
 </style>
