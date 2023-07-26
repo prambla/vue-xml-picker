@@ -35,7 +35,8 @@ export default {
     font-size: 18px;
     border-color: darkgrey;
     border-radius: 2mm;
-    padding: 3px;
+    padding: 0.4em;
+    margin-right: 10em;
     background-color: rgb(71, 72, 73);
 }
 .simbols {

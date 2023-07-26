@@ -37,9 +37,11 @@ export default {
 <style scoped>
 .att-name {
     color: rgb(255, 124, 1);
+    cursor: pointer;
 }
 .att-value {
     color: rgb(123, 147, 255);
+    cursor: pointer;
 }
 
 </style>

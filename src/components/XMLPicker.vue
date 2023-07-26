@@ -15,7 +15,6 @@ export default {
     data() {
         return {
             xmlDoc: XMLDocument,
-            lvl: 0,
             rootName: ''
         }
     },
@@ -34,14 +33,14 @@ export default {
 <template>
     <div id="xml-display">
         <span class="titles">XML: </span>
-        <XMLComponent class="xml-display" @click="receivePath" :node="xmlDoc.firstChild" :name="rootName" :level="lvl"></XMLComponent>
+        <pre><XMLComponent class="xml-display" @click="receivePath" :node="xmlDoc.firstChild" :name="rootName" :selectedPath="path"></XMLComponent></pre>
     </div>
 </template>
 
 <style scoped>
 .xml-display {
     border-radius: 2mm;
-    padding: 5px;
+    padding: 0.5em;
     border-color: darkgray;
     background-color: rgb(71, 72, 73);
 }
