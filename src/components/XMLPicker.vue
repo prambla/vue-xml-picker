@@ -41,6 +41,7 @@ export default {
 .xml-display {
     border-radius: 2mm;
     padding: 0.5em;
+    padding-left: 1em;
     border-color: darkgray;
     background-color: rgb(71, 72, 73);
     max-width: 75vw;

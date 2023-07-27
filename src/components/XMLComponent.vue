@@ -34,7 +34,8 @@ export default {
             // used to indicates XMLAttribute that one of my attribute has been selected on path
             selectedAttribute: '',
             // indicates the selected path to transfer to the childs
-            childSelectedPath: ''
+            childSelectedPath: '',
+            folded: false
         }
     },
     emits: ['click'],
@@ -177,19 +178,23 @@ export default {
 <template>
     <div>
         <div :class="selected">
+            <span v-if="!folded" @click="folded = !folded" class="folding"><svg width="1em" height="1em" viewBox="0 0 24 24" class="caret" data-v-d071a178=""><path fill="whitesmoke" d="m11.998 17l7-8h-14z"></path></svg></span>
+            <span v-else @click="folded = !folded" class="folding"><svg width="1em" height="1em" viewBox="0 0 24 24" class="caret" data-v-d071a178=""><path fill="whitesmoke" d="m9 19l8-7l-8-7z"></path></svg></span>
             <span class="simbols">&lt</span><span @click="clicked('element')" class="elementName">{{ node.nodeName }}</span><XMLAttributes @click="receiveEmit" :attributesStr="attributes" :nAttributes="numOfAttributes" :selectedAttribute="selectedAttribute"></XMLAttributes><span class="simbols">&gt</span>
-            <div v-if="childType=='list'">
-                <div v-for="child in childComponents" :key="child.id">
-                    <XMLComponent class="child" @click="receiveEmit" :node="child.node" :name="child.id" :selectedPath="childSelectedPath"></XMLComponent>
+            <div :style="folded ? 'display: none;' : 'display: block;'">
+                <div v-if="childType=='list'">
+                    <div v-for="child in childComponents" :key="child.id">
+                        <XMLComponent class="child" @click="receiveEmit" :node="child.node" :name="child.id" :selectedPath="childSelectedPath"></XMLComponent>
+                    </div>
                 </div>
+                <div v-else-if="childType=='text'">
+                    <span></span><span @click="clicked('text')" :class="textValueClass">{{ node.firstChild.nodeValue }}</span>
+                </div>
+                <div v-else>
+                    <XMLComponent class="child" @click="receiveEmit" :node="node.firstChild" :name="node.firstChild.nodeName" :selectedPath="childSelectedPath"></XMLComponent>
+                </div>
+                <span class="simbols">&lt/</span><span class="elementNameClose">{{ node.nodeName }}</span><span class="simbols">&gt</span>
             </div>
-            <div v-else-if="childType=='text'">
-                <span></span><span @click="clicked('text')" :class="textValueClass">{{ node.firstChild.nodeValue }}</span>
-            </div>
-            <div v-else>
-                <XMLComponent class="child" @click="receiveEmit" :node="node.firstChild" :name="node.firstChild.nodeName" :selectedPath="childSelectedPath"></XMLComponent>
-            </div>
-            <span class="simbols">&lt/</span><span class="elementNameClose">{{ node.nodeName }}</span><span class="simbols">&gt</span>
         </div>
     </div>
 </template>
@@ -198,7 +203,7 @@ export default {
 .highlight {
     background-color: grey;
     border-radius: 1mm;
-    padding-left: 0.5em;
+    padding-left: 1em;
     padding-right: 15em;
     margin-right: 15em;
     box-sizing: border-box;
@@ -208,6 +213,9 @@ export default {
     background-color: transparent;
     padding-left: 0.5em;
     box-sizing: border-box;
+}
+.folding {
+    margin-left: -1em;
 }
 .child {
     margin-left: 2em;
