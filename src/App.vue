@@ -38,6 +38,7 @@ export default {
     padding: 0.4em;
     margin-right: 10em;
     background-color: rgb(71, 72, 73);
+    max-width: 50vw;
 }
 .simbols {
     color: rgb(231, 231, 231);

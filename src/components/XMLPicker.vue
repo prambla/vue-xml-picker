@@ -33,7 +33,7 @@ export default {
 <template>
     <div id="xml-display">
         <span class="titles">XML: </span>
-        <pre><XMLComponent class="xml-display" @click="receivePath" :node="xmlDoc.firstChild" :name="rootName" :selectedPath="path"></XMLComponent></pre>
+        <pre class="xml-display"><XMLComponent @click="receivePath" :node="xmlDoc.firstChild" :name="rootName" :selectedPath="path"></XMLComponent></pre>
     </div>
 </template>
 
@@ -43,6 +43,7 @@ export default {
     padding: 0.5em;
     border-color: darkgray;
     background-color: rgb(71, 72, 73);
+    max-width: 75vw;
 }
 
 div#xml-display {
