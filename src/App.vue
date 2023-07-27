@@ -20,7 +20,7 @@ export default {
             <pre class="pathValue">{{ path }}</pre>
         </div>
         <div id="xml-picker">
-            <XMLPicker v-model="path" xmlStr="<bookstore location='Barcelona'><book><title>Everyday Italian</title><author>Giada De Laurentiis</author><year>2005</year><price>30.00</price></book><book><title>Harry Potter</title><author>J K. Rowling</author><year>2005</year><price>29.99</price></book><book><title>Learning XML</title><author>Erik T. Ray</author><year>2003</year><price>39.95</price></book></bookstore>"></XMLPicker>
+            <XMLPicker v-model="path" xmlStr="<bookstore location='Barcelona' owner='Pepito'><book><title>Everyday Italian</title><author>Giada De Laurentiis</author><year>2005</year><price>30.00</price></book><book><title>Harry Potter</title><author>J K. Rowling</author><year>2005</year><price>29.99</price></book><book><title>Learning XML</title><author>Erik T. Ray</author><year>2003</year><price>39.95</price></book></bookstore>"></XMLPicker>
         </div>
     </div>
 </template>
