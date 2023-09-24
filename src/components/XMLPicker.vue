@@ -37,16 +37,18 @@ export default {
     </div>
 </template>
 
-<style scoped>
+<style>
 .xml-display {
     border-radius: 2mm;
     padding: 0.5em;
     padding-left: 1em;
-    border-color: darkgray;
-    background-color: rgb(71, 72, 73);
+    border-color: var(--color-border);
+    background-color: var(--color-background);
     max-width: 75vw;
 }
-
+.simbols {
+    color: var(--text-color);
+}
 div#xml-display {
     margin-top: 1%;
 }

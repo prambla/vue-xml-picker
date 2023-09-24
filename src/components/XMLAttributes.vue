@@ -48,12 +48,11 @@ export default {
 
 <style scoped>
 .att-name {
-    color: rgb(255, 124, 1);
+    color: var(--attribute-name-text-color);
 }
 .att-value {
-    color: rgb(98, 218, 255);
+    color: var(--attribute-value-text-color);
 }
-
 .not-selected {
     cursor: pointer;
     margin-left: 0.5em;
@@ -62,7 +61,7 @@ export default {
     cursor: pointer;
     margin-left: 0.5em;
     border-radius: 1mm;
-    background-color: grey;
+    background-color: var(--color-background);
 }
 
 </style>

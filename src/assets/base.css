@@ -1,6 +1,6 @@
 
+/* color palette from <https://github.com/vuejs/theme> */
 /*
-/* color palette from <https://github.com/vuejs/theme> *
 :root {
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;
@@ -22,9 +22,10 @@
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
 }
+*/
 
-/* semantic color variables for this project *
-:root {
+/* semantic color variables for this project */
+/*:root {
   --color-background: var(--vt-c-white);
   --color-background-soft: var(--vt-c-white-soft);
   --color-background-mute: var(--vt-c-white-mute);
@@ -35,9 +36,21 @@
   --color-heading: var(--vt-c-text-light-1);
   --color-text: var(--vt-c-text-light-1);
 
-  --section-gap: 160px;
+}*/
+
+:root {
+  --color-border: darkgrey;
+  --color-background: rgb(255, 255, 255);
+  --app-color-background: rgb(202, 202, 202);
+  --text-color: rgb(10, 10, 10);
+  --highlight-color: rgb(252, 255, 206);
+  --bracket-color: rgb(20, 20, 20);
+  --element-text-color: rgb(236, 55, 0);
+  --attribute-name-text-color: rgb(180, 17, 221);
+  --attribute-value-text-color: rgb(80, 161, 79);
 }
 
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: var(--vt-c-black);
@@ -66,7 +79,7 @@ body {
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
-  background-color: rgb(31, 31, 31);
+  background-color: var(--app-color-background);
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
   font-size: 15px;

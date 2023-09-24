@@ -27,20 +27,17 @@ export default {
 
 <style>
 .titles {
-    color: whitesmoke;
+    color: var(--text-color);
     font-size: 20px;
 }
 .pathValue{
-    color: whitesmoke;
+    color: var(--text-color);
     font-size: 18px;
-    border-color: darkgrey;
+    border-color: var(--color-border);
     border-radius: 2mm;
     padding: 0.4em;
     margin-right: 10em;
-    background-color: rgb(71, 72, 73);
+    background-color: var(--color-background);
     max-width: 50vw;
-}
-.simbols {
-    color: rgb(231, 231, 231);
 }
 </style>

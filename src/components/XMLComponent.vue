@@ -178,8 +178,8 @@ export default {
 <template>
     <div>
         <div :class="selected">
-            <span v-if="!folded" @click="folded = !folded" class="folding"><svg width="1em" height="1em" viewBox="0 0 24 24" class="caret" data-v-d071a178=""><path fill="whitesmoke" d="m11.998 17l7-8h-14z"></path></svg></span>
-            <span v-else @click="folded = !folded" class="folding"><svg width="1em" height="1em" viewBox="0 0 24 24" class="caret" data-v-d071a178=""><path fill="whitesmoke" d="m9 19l8-7l-8-7z"></path></svg></span>
+            <span v-if="!folded" @click="folded = !folded" class="folding"><svg width="1em" height="1em" viewBox="0 0 24 24" class="caret"><path fill="currentColor" d="m11.998 17l7-8h-14z"></path></svg></span>
+            <span v-else @click="folded = !folded" class="folding"><svg width="1em" height="1em" viewBox="0 0 24 24" class="caret"><path fill="currentColor" d="m9 19l8-7l-8-7z"></path></svg></span>
             <span class="simbols">&lt</span><span @click="clicked('element')" class="elementName">{{ node.nodeName }}</span><XMLAttributes @click="receiveEmit" :attributesStr="attributes" :nAttributes="numOfAttributes" :selectedAttribute="selectedAttribute"></XMLAttributes><span class="simbols">&gt</span>
             <div :style="folded ? 'display: none;' : 'display: block;'">
                 <div v-if="childType=='list'">
@@ -201,7 +201,7 @@ export default {
 
 <style scoped>
 .highlight {
-    background-color: grey;
+    background-color: var(--highlight-color);
     border-radius: 1mm;
     padding-left: 1em;
     padding-right: 15em;
@@ -217,31 +217,35 @@ export default {
 .folding {
     margin-left: -1em;
 }
+.caret {
+    color: var(--bracket-color);
+    fill: var(--bracket-color)
+}
 .child {
     margin-left: 2em;
 }
 .text-value {
-    color: whitesmoke;
+    color: var(--text-color);
     cursor: pointer;
     margin-left: 2em;
     padding-left: 0.5em;
 }
 
 .text-value-selected {
-    color: whitesmoke;
+    color: var(--text-color);
     cursor: pointer;
     margin-left: 2em;
     padding-left: 0.5em;
     padding-right: 0.5em;
-    background-color: grey;
+    background-color: var(--highlight-color);
     border-radius: 1mm;
 }
 
 .elementName {
-    color: rgb(81, 255, 0);
+    color: var(--element-text-color);
     cursor: pointer;
 }
 .elementNameClose {
-    color: rgb(81, 255, 0);
+    color: var(--element-text-color);
 }
 </style>
