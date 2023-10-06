@@ -1,8 +1,15 @@
-## XML Picker
+# XML Picker
 
 vue-xml-picker is a vue app that reads an XML string and it shows its content the way that when you click an element, an attribute or a value of the XML it shows its path above.
 
-## XML Example
+![Init](/pictures/1.png)
+![Selected-element](/pictures/2-selected-element.png)
+![Folded-nodes](/pictures/3-folded-nodes.png)
+![Selected-attribute](/pictures/4-selected-attributes.png)
+![Selected-text](/pictures/5-selected-text.png)
+
+
+## XML Example Used
 ```
 <bookstore location='Barcelona' owner='Pepito'>
     <book>
