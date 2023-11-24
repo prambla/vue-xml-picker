@@ -8,6 +8,7 @@
 ![Selected-attribute](/pictures/4-selected-attributes.png)
 ![Selected-text](/pictures/5-selected-text.png)
 
+Inspired by [leon737](https://github.com/leon737/vue-xml-viewer) an adding the functionality to pick path from an element/attribute/value
 
 ## XML Example Used
 ```
