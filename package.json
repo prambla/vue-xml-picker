@@ -1,6 +1,7 @@
 {
   "name": "xml-picker",
   "version": "0.0.0",
+  "homepage": "https://prambla.github.io/vue-xml-picker/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
