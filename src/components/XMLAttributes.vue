@@ -61,7 +61,7 @@ export default {
     cursor: pointer;
     margin-left: 0.5em;
     border-radius: 1mm;
-    background-color: var(--color-background);
+    background-color: var(--highlight-color);
 }
 
 </style>
