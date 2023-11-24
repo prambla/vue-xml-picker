@@ -1,5 +1,7 @@
 # XML Picker
 
+Inspired by [leon737](https://github.com/leon737/vue-xml-viewer) and adding the functionality to pick path from an element/attribute/value
+
 [vue-xml-picker](https://prambla.github.io/vue-xml-picker/) is a vue app that reads an XML string and it shows its content the way that when you click an element, an attribute or a value of the XML it shows its path above.
 
 ![Init](/pictures/1.png)
@@ -7,8 +9,6 @@
 ![Folded-nodes](/pictures/3-folded-nodes.png)
 ![Selected-attribute](/pictures/4-selected-attributes.png)
 ![Selected-text](/pictures/5-selected-text.png)
-
-Inspired by [leon737](https://github.com/leon737/vue-xml-viewer) an adding the functionality to pick path from an element/attribute/value
 
 ## XML Example Used
 ```
